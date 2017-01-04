@@ -1,0 +1,25 @@
+<h1>Projekat:</h1>
+
+<p>
+  Naziv: <%= @project.naziv %>
+</p>
+
+<p>
+  Trajanje: <%= @project.trajanje %>
+</p>
+
+<p>
+  Vrsta: <%= @project.vrsta %>
+</p>
+
+<p>
+  Sredstva: <%= @project.sredstva %>
+</p>
+
+<p>
+  Oprema: <%= @project.oprema %>
+</p>
+
+<%= link_to 'Azuriraj ovaj projekat', edit_project_path(@project) %> |
+
+<%= link_to 'Nazad na listu svih projekata', projects_path %>

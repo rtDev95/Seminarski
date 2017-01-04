@@ -1,0 +1,45 @@
+<h1>Azuriraj projekat</h1>
+
+<% if @project.errors.any? %>
+    <h2>Projekat se ne moze azurirati zbog sledecih gresaka: </h2>
+    <ul>
+      <% @project.errors.full_messages.each do |poruka| %>
+          <li><%= poruka %></li>
+      <% end %>
+    </ul>
+<% end %>
+
+<%= form_for @project do |f| %>
+
+    <p>
+      <%= f.label :naziv %><br/>
+      <%= f.text_field :naziv %>
+    </p>
+
+    <p>
+      <%= f.label :trajanje %><br/>
+      <%= f.text_field :trajanje %>
+    </p>
+
+    <p>
+      <%= f.label :vrsta %><br/>
+      <%= f.text_field :vrsta %>
+    </p>
+
+    <p>
+      <%= f.label 'sredstva (U dinarima)' %><br/>
+      <%= f.text_field :sredstva %>
+    </p>
+
+    <p>
+      <%= f.label :oprema %><br/>
+      <%= f.text_area :oprema %>
+    </p>
+
+    <p>
+      <%= f.submit :Potvrdi %>
+    </p>
+
+<% end %>
+
+<%= link_to 'Nazad na listu svih projekata', projects_path %>

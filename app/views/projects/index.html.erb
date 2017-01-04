@@ -1,0 +1,19 @@
+<h1>Lista svih projekata: </h1>
+
+<p>
+  <%= link_to 'Kreiraj novi projekat', new_project_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Naziv projekta</th>
+  </tr>
+  <% @projects.each do |projekat| %>
+      <tr>
+        <td><%= projekat.naziv %></td>
+        <td><%= link_to 'Azuriraj', edit_project_path(projekat) %></td>
+        <td><%= link_to 'Prikazi', project_path(projekat) %></td>
+        <td><%= link_to 'Izbrisi', project_path(projekat), method: :delete, data: {confirm: 'Da li ste sigurni?'} %></td>
+      </tr>
+  <% end %>
+</table>
